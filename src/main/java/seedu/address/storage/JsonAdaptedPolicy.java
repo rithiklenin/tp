@@ -1,5 +1,7 @@
 package seedu.address.storage;
 
+import java.time.LocalDate;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
@@ -17,7 +19,7 @@ public class JsonAdaptedPolicy {
     private final PolicyType type;
     private final double premiumAmount;
     private final double coverageAmount;
-    private final String expiryDate; // Assuming you want to include expiryDate as well
+    private final LocalDate expiryDate; // Assuming you want to include expiryDate as well
 
     /**
      * Constructs a {@code JsonAdaptedPolicy} with the given policy details.
@@ -31,7 +33,7 @@ public class JsonAdaptedPolicy {
         this.type = type;
         this.premiumAmount = premiumAmount;
         this.coverageAmount = coverageAmount;
-        this.expiryDate = expiryDate; // Initialize expiryDate
+        this.expiryDate = LocalDate.parse(expiryDate); // Initialize expiryDate
     }
 
     /**
@@ -65,7 +67,7 @@ public class JsonAdaptedPolicy {
         return coverageAmount;
     }
 
-    public String getExpiryDate() { // Getter for expiryDate
+    public LocalDate getExpiryDate() { // Getter for expiryDate
         return expiryDate;
     }
 }

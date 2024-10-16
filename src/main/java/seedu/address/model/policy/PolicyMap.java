@@ -1,6 +1,7 @@
 package seedu.address.model.policy;
 
 import java.util.HashMap;
+import java.util.Set;
 
 /**
  * A class to store a mapping of {@code PolicyType} to {@code Policy}.
